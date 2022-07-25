@@ -1,0 +1,14 @@
+{
+  "name": "primeira-aula",
+  "version": "1.0.0",
+  "description": "projecto para treinar e iniciaar no node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript;node"
+  ],
+  "author": "Kene Conde",
+  "license": "ISC"
+}
