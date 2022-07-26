@@ -25,11 +25,33 @@ const userRoute = (app) =>{
           .post((req,res) =>{
             const users = getUsers();
 
-            console.log(req)
             users.push(req.body);
             saveUser(users);
 
             res.status(200).send('ok');
+          })
+          .put((req,res)=> {
+            const users = getUsers();
+            saveUser(users.map(user=>{
+             
+              if(user.id === req.params.id){
+
+                return {
+                  ...user,
+                  ...req.body
+                }
+              }
+
+              return user
+            }))
+            console.log(req)
+            res.status(200).send('Atualizado...')
+          })
+          .delete((req,res)=>{
+            const users = getUsers();
+
+            saveUser(users.filter(user=> user.id !== req.params.id))
+            res.status(200).send('Apagado ')
           })
 }
 
